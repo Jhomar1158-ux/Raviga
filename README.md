@@ -11,7 +11,7 @@ Knowledge of: **Java**, **Spring Framework**, **Spring Boot**, **Git** y **AWS**
 - [Java](https://www.java.com/es/) 
 - [Bootstrap](https://getbootstrap.com/) 
 
-**Installation of Dependecies**
+**Installation of Dependencies**
 ```xml
 <!-- DEPENDENCIAS PARA BOOTSTRAP -->
         <dependency>
