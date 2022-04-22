@@ -1,5 +1,7 @@
 package com.jhomar.ProjectRaviga.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -99,7 +101,7 @@ public class UserController {
 		}
 		
 		@GetMapping("/dashboard")
-		public String dashboard(HttpSession session, Model model, @ModelAttribute("event") Convocatoria convocatoria) {
+		public String dashboard(HttpSession session, Model model, @ModelAttribute("convocatoria") Convocatoria convocatoria) {
 			/*REVISAMOS SESION*/
 			User currentUser = (User)session.getAttribute("user_session");
 			if(currentUser == null) {
@@ -107,21 +109,20 @@ public class UserController {
 			}
 			/*REVISAMOS SESION*/
 			
-//			User myUser = servicio.find_user(currentUser.getId());
-//			model.addAttribute("user", myUser);
-//			model.addAttribute("states", State.States);
-			
+			User myUser = servicio.find_user(currentUser.getId());
+			model.addAttribute("user", myUser);
+
 			//Lista de Eventos
 			//Obtenemos el estado de mi usuario
-//			String miEstado = currentUser.getState();
+			String miEUniversidad = currentUser.getUniversidad();
 			
 			//Creamos una lista de Eventos que tengan mi estado
-//			List<Event> eventos_enmi_estado = servicio.eventos_enmi_estado(miEstado);
+			List<Convocatoria> convocatorias_enmi_u = servicio.convocatorias_enmi_u(miEUniversidad);
 //			//Creamos una lista de Eventos que no tengan mi estado 
-//			List<Event> eventos_noenmi_estado = servicio.eventos_noenmi_estado(miEstado);
+			List<Convocatoria> convocatorias_noenmi_u = servicio.convocatorias_noenmi_u(miEUniversidad);
 //			
-//			model.addAttribute("eventos_enmi_estado", eventos_enmi_estado);
-//			model.addAttribute("eventos_noenmi_estado", eventos_noenmi_estado);
+			model.addAttribute("convocatorias_enmi_u", convocatorias_enmi_u);
+			model.addAttribute("convocatorias_noenmi_u", convocatorias_noenmi_u);
 //			
 			return "dashboard.jsp";
 		}

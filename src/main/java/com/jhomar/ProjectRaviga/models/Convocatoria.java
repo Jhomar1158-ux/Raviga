@@ -19,6 +19,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -33,6 +34,7 @@ public class Convocatoria {
 	@NotEmpty(message="El campo de nombre es obligatorio.")
 	private String name;
 	
+	@Size(max=200, message="La descripcion tiene 200 caracteres como maximo.")
 	@NotEmpty(message="El campo de descripción es obligatorio.")
 	private String descripcion;
 	
