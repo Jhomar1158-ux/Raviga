@@ -3,9 +3,9 @@ package com.jhomar.ProjectRaviga.repositorios;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.jhomar.ProjectRaviga.models.Convocatoria;
+import com.jhomar.ProjectRaviga.models.Message;
 
 @Repository
-public interface ConvocatoriaRepository extends CrudRepository<Convocatoria, Long> {
+public interface MessageRepository extends CrudRepository<Message, Long>{
 
 }

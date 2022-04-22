@@ -1,0 +1,205 @@
+@charset "ISO-8859-1";
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color-1:#050A30;
+    --color-2:#233DFF;
+    --color-3:#233DFF;
+    --color-4:#4BA4E0;
+    --color-1-font:#707980;
+}
+
+body{
+    width: 100%;
+}
+
+
+.logoMain{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 160px;
+}
+
+.logoMain img{
+    width: 50px;
+}
+
+.logoMain p{
+    color: var(--color-3);
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    margin-left: 10px;
+    font-size: 26px;
+
+}
+
+.login__main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_banner img{
+    width: 900px;
+}
+
+.titleInicio{
+    color: var(--color-3);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 30px;
+    
+}
+
+.titleLogin{
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.form-login-main{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-left: 30px;
+}
+
+.form-login-main input[type=email]{
+    width: 450px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+.form-login-main input[type=password]{
+    width: 450px;
+
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+
+.form-login-main input[type=submit]{
+    width: 450px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--color-3);
+}
+.login__datos_confirm_register{
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    margin-top: 10px;
+}
+.names{
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.names input[type=text]{
+    width: 210px;
+
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+
+
+.location{
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+.universidadClass{
+    width: 210px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+
+.departamentoClass{
+    width: 220px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+/* ===================CONSULTAR=============== */
+/* Cómo recortar una imagen */
+.cropped{
+    overflow: hidden;
+    height: 100vh;
+}
+
+.cropped img{
+    margin: -200px 0px 0px 0px;
+}
+/* ============================================ */
+
+/* col-3 class */
+/* https://getbootstrap.com/docs/4.0/layout/grid/
+ */
+
+ /* Poppins, disminuir el placeholder  */
+
+ /* deadline: italica o negrita */
+
+ /* Botón guardado: cambiar color en Revisar celeste */
+
+ /* icon de check en el botón */
+
+
+.stylebtn1 input[type=text] {
+    width: 450px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
+
+.stylebtn1 input[type=date]{
+    width: 450px;
+    padding: 6px;
+    margin-top: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-1-font);
+    background-color: #e6e9fc;
+}
