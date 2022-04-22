@@ -123,5 +123,31 @@ public class ConvocatoriaController {
 		
 	}
 	
+	@PostMapping("/convocatoria-message")
+	public String message(@Valid @ModelAttribute("message") Message message, 
+							BindingResult result,
+							HttpSession session, Model model) {
+		/*REVISAMOS SESION*/
+		User currentUser = (User)session.getAttribute("user_session");
+		if(currentUser == null) {
+			return "redirect:/";
+		}
+		/*REVISAMOS SESION*/
+		
+		//
+		Long convocatoria_id=message.getConvocatoria().getId();
+		Convocatoria convocatoria_this= servicio.find_convocatoria(convocatoria_id);
+		
+		if(result.hasErrors()) {
+			model.addAttribute("convocatoria_this", convocatoria_this);
+			return "showConvocatoria.jsp";
+		}
+		
+		servicio.save_message(message);
+		
+		return "redirect:/convocatoria-show/"+convocatoria_id;
+		
+		
+	}
 	
 }

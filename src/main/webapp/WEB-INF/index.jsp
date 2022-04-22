@@ -79,7 +79,7 @@
         </div>
         <div class="topnav">
             <div class="search-container">
-                <form action="/action_page.php">
+                <form action="/">
                 <input type="text" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -93,224 +93,56 @@
         <div class="convocatoriasOwnU">
           <div class="titleConvocatoriasOwnU">
             <i class="fa fa-star iconStyle1" aria-hidden="true"></i>
-            <p class="pStyle1">Convocatorias en la UNI</p>
+            <p class="pStyle1">Convocatorias que esperan por ti</p>
           </div>
           <div class="mainCard">
             <div class="container2">
-              <div class="card">
+            
+            	<c:forEach var="i" items="${allConvocatorias}">
+            	<div class="card">
                 <div class="card-header">
                   <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
                 </div>
                 <div class="card-body">
-                  <span class="tag tag-general">Robotica</span>
+                  <span class="tag tag-general">${i.categoria.name}</span>
                   <h4>
-                    Convocatoria para el Comite de Control & Robotica
+                    ${i.name}
                   </h4>
                   <p>
-                    Deadline: 24/12/2022
+                    Deadline: ${i.deadline}
                   </p>
                   <div class="user">
-                    <button class="buttonCard button2">Guardar</button>
-                    <button class="buttonCard button3">Revisar</button>
+						<c:choose>
+							<c:when test="${i.attendees.contains(user)}">
+								<a href="/login" >
+									<button class="buttonCard button4">
+			                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+			                        Guardado
+			                      </button>
+								</a>
+							</c:when>
+							<c:otherwise>
+								<span>
+									<a href="/login">
+										<button class="buttonCard button2">Guardar</button>
+									</a>
+								</span>
+							</c:otherwise>
+
+						</c:choose>
+						<a href="/login">
+								<button class="buttonCard button3">Revisar</button>
+						</a>
+					
+                    
+                    
                     <!-- ======================================================= -->
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://www.newsbtc.com/wp-content/uploads/2020/06/mesut-kaya-LcCdl__-kO0-unsplash-scaled.jpg" alt="ballons" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Programacion</span>
-                  <h4>
-                    Convocatoria de Voluntarios para el IEEEXtreme 15.0
-                  </h4>
-                  <p>
-                    Deadline: 01/08/2022
-                  </p>
-                  <div class="user">
-                    <button class="buttonCard button2">Guardar</button>
-                    <button class="buttonCard button3">Revisar</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Matematicas</span>
-                  <h4>
-                    Convocatoria de Tutores para Matematica III - FIEE (Semipresencial)
-                  </h4>
-                  <p>
-                    Deadline: 29/04/2022
-                  </p>
-                  <div class="user">
-                    <div class="btn__guardado">
-                      
-                      <button class="buttonCard button4">
-                        <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        Guardado
-                      </button>
-                    </div>
-                    <button class="buttonCard button3">Revisar</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Matematicas</span>
-                  <h4>
-                    Convocatoria de Tutores para Sen/ales y Sistemas - FIEE
-                  </h4>
-                  <p>
-                    Deadline: 19/06/2022
-                  </p>
-                  <div class="user">
-                    <button class="buttonCard button2">Guardar</button>
-                    <button class="buttonCard button3">Revisar</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          
-        </div>
-        <div class="convocatoriasInOthersU">
-          <div class="titleConvocatoriasInOthersU">
-            <i class="fa fa-globe iconStyle1" aria-hidden="true"></i>
-            <p class="pStyle1">Descubre mas Convocatorias</p>
-          </div>
-          <div class="mainCard">
-            <div class="container2">
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Robótica</span>
-                  <h4>
-                    Why is the Tesla Cybertruck designed the way it
-                    is?
-                  </h4>
-                  <p>
-                    Deadline: 27/04/2022
-                  </p>
-                  <div class="user">
-                    <button class="buttonCard button2">Guardar</button>
-                    <button class="buttonCard button3">Revisar</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://www.newsbtc.com/wp-content/uploads/2020/06/mesut-kaya-LcCdl__-kO0-unsplash-scaled.jpg" alt="ballons" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Programación</span>
-                  <h4>
-                    How to Keep Going When You Don’t Know What’s Next
-                  </h4>
-                  <p>
-                    The future can be scary, but there are ways to
-                    deal with that fear.
-                  </p>
-                  <div class="user">
-                    <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo" alt="user" />
-                    <div class="user-info">
-                      <h5>Eyup Ucmaz</h5>
-                      <small>Yesterday</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-general">Matemáticas</span>
-                  <h4>
-                    10 Rules of Dashboard Design
-                  </h4>
-                  <p>
-                    Dashboard Design Guidelines
-                  </p>
-                  <div class="user">
-                    <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-                    <div class="user-info">
-                      <h5>Carrie Brewer</h5>
-                      <small>1w ago</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-pink">Matemáticas</span>
-                  <h4>
-                    10 Rules of Dashboard Design
-                  </h4>
-                  <p>
-                    Dashboard Design Guidelines
-                  </p>
-                  <div class="user">
-                    <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-                    <div class="user-info">
-                      <h5>Carrie Brewer</h5>
-                      <small>1w ago</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-pink">Matemáticas</span>
-                  <h4>
-                    10 Rules of Dashboard Design
-                  </h4>
-                  <p>
-                    Dashboard Design Guidelines
-                  </p>
-                  <div class="user">
-                    <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-                    <div class="user-info">
-                      <h5>Carrie Brewer</h5>
-                      <small>1w ago</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                  <span class="tag tag-pink">Matemáticas</span>
-                  <h4>
-                    10 Rules of Dashboard Design
-                  </h4>
-                  <p>
-                    Dashboard Design Guidelines
-                  </p>
-                  <div class="user">
-                    <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-                    <div class="user-info">
-                      <h5>Carrie Brewer</h5>
-                      <small>1w ago</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </c:forEach>
+	              
+                 
           </div>
         </div>
         

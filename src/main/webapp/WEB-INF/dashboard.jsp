@@ -92,7 +92,7 @@
         </div>
         <div class="topnav">
             <div class="search-container">
-                <form action="/action_page.php">
+                <form action="/dashboard">
                 <input type="text" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -110,7 +110,14 @@
           </div>
           <div class="mainCard">
             <div class="container2">
-            <c:forEach var="i" items="${convocatorias_enmi_u}">
+            <c:if test="${convocatorias_enmi_u.size() == 0}">
+            	<div class="loSentimos">
+       	            	<i class="fa fa-frown-o" aria-hidden="true"></i>
+       	            	<p>Lo sentimos, no encontramos convocatorias en tu universidad por ahora...</p>
+            	</div>
+            </c:if>
+            <c:if test="${convocatorias_enmi_u.size()>0}">
+            	<c:forEach var="i" items="${convocatorias_enmi_u}">
             	<div class="card">
                 <div class="card-header">
                   <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
@@ -153,6 +160,8 @@
                 </div>
               </div>
             </c:forEach>
+            </c:if>
+            
           </div>
         </div>
         <div class="convocatoriasInOthersU">

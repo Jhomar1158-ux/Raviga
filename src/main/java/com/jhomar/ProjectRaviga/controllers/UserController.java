@@ -35,6 +35,10 @@ public class UserController {
 			
 			//Agregamos los opciones de State a nuestro formulario
 			//model.addAttribute("states", Universidad.Universidades);
+			List<Convocatoria> allConvocatorias = servicio.find_all_convocatorias();
+			
+			model.addAttribute("allConvocatorias", allConvocatorias);
+			
 			
 			return "index.jsp";
 		}

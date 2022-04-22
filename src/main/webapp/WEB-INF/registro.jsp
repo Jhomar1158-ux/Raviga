@@ -25,11 +25,11 @@
 <body>
 <div class="login__main">
         <div class="login__datos">
-            <a href="#!" class="logoMain">
+            <a href="/" class="logoMain">
                 <img src="./IMG/LogoRaviga2.svg" alt="Logo Raviga">
                 <p>Raviga</p>
             </a>
-            <a href="#" class="titleInicio">Volver al Iniciar Sesión</a>
+            <a href="/login" class="titleInicio">Volver al Iniciar Sesión</a>
             <div class="login__datos_confirm">
                 <p class="titleLogin">Bienvenido a Raviga</p>
                 <form:form action="/registroProcess" method="POST" class="form-login-main" modelAttribute="nuevoUsuario">

@@ -29,7 +29,7 @@
                 <img src="./IMG/LogoRaviga2.svg" alt="Logo Raviga">
                 <p>Raviga</p>
             </a>
-            <a href="/login" class="titleInicio">Volver al inicio</a>
+            <a href="/" class="titleInicio">Volver al inicio</a>
             <div class="login__datos_confirm">
                 <p class="titleLogin">Bienvenido a Raviga</p>
                 <form:form action="/loginProcess" method="POST" class="form-login-main"  modelAttribute="nuevoLogin">

@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import com.jhomar.ProjectRaviga.models.Categoria;
 import com.jhomar.ProjectRaviga.models.Convocatoria;
 import com.jhomar.ProjectRaviga.models.LoginUser;
+import com.jhomar.ProjectRaviga.models.Message;
 import com.jhomar.ProjectRaviga.models.User;
 import com.jhomar.ProjectRaviga.repositorios.CategoriaRepository;
 import com.jhomar.ProjectRaviga.repositorios.ConvocatoriaRepository;
@@ -142,6 +143,16 @@ public class AppService {
 		repositorio_user.save(myUser);
 		
 	}
+	
+	public void save_message(Message thisMessage) {
+		repositorio_message.save(thisMessage);
+	}
+	
+	public List<Convocatoria> find_all_convocatorias(){
+		return (List<Convocatoria>) repositorio_convocatoria.findAll();
+	}
+	
+	
 	
 	
 }
