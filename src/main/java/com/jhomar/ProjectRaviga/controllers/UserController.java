@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.jhomar.ProjectRaviga.models.Convocatoria;
 import com.jhomar.ProjectRaviga.models.LoginUser;
 import com.jhomar.ProjectRaviga.models.Universidad;
 import com.jhomar.ProjectRaviga.models.User;
@@ -90,6 +91,43 @@ public class UserController {
 			return "redirect:/dashboard";
 								
 		}
+		
+		@GetMapping("/logout")
+		public String logout(HttpSession session) {
+			session.removeAttribute("user_session");
+			return "redirect:/";
+		}
+		
+		@GetMapping("/dashboard")
+		public String dashboard(HttpSession session, Model model, @ModelAttribute("event") Convocatoria convocatoria) {
+			/*REVISAMOS SESION*/
+			User currentUser = (User)session.getAttribute("user_session");
+			if(currentUser == null) {
+				return "redirect:/";
+			}
+			/*REVISAMOS SESION*/
+			
+//			User myUser = servicio.find_user(currentUser.getId());
+//			model.addAttribute("user", myUser);
+//			model.addAttribute("states", State.States);
+			
+			//Lista de Eventos
+			//Obtenemos el estado de mi usuario
+//			String miEstado = currentUser.getState();
+			
+			//Creamos una lista de Eventos que tengan mi estado
+//			List<Event> eventos_enmi_estado = servicio.eventos_enmi_estado(miEstado);
+//			//Creamos una lista de Eventos que no tengan mi estado 
+//			List<Event> eventos_noenmi_estado = servicio.eventos_noenmi_estado(miEstado);
+//			
+//			model.addAttribute("eventos_enmi_estado", eventos_enmi_estado);
+//			model.addAttribute("eventos_noenmi_estado", eventos_noenmi_estado);
+//			
+			return "dashboard.jsp";
+		}
+		
+		
+		
 		
 		
 		

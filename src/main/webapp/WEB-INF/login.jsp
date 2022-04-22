@@ -25,22 +25,25 @@
 <body>
 	<div class="login__main">
         <div class="login__datos">
-            <a href="#!" class="logoMain">
+            <a href="/" class="logoMain">
                 <img src="./IMG/LogoRaviga2.svg" alt="Logo Raviga">
                 <p>Raviga</p>
             </a>
-            <a href="/" class="titleInicio">Volver al inicio</a>
+            <a href="/login" class="titleInicio">Volver al inicio</a>
             <div class="login__datos_confirm">
                 <p class="titleLogin">Bienvenido a Raviga</p>
-                <form action="/loginProcess" method="POST" class="form-login-main"  modelAttribute="nuevoLogin">
-                    <input type="email" name="email" placeholder="Tu correo electrónico">
-                    <input type="password" name="password" placeholder="Ingresa 6 carácteres a más">
+                <form:form action="/loginProcess" method="POST" class="form-login-main"  modelAttribute="nuevoLogin">
+                    <form:input type="email" path="email" placeholder="Tu correo electronico"/>
+                    <form:errors path="email" class="text-danger" />
+                    
+                    <form:password path="password" placeholder="Ingresa 6 caracteres a mas"/>
+					<form:errors path="password" class="text-danger" />
                     <input type="submit" value="Ingresar">
                     <div class="login__datos_confirm_register">
                         <p>¿No tienes cuenta?</p>
                         <a href="/registro">Registrate aquí</a>
                     </div>
-                </form>
+                </form:form>
             </div>
         </div>
         <div class="login_banner cropped">

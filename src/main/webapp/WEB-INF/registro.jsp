@@ -32,16 +32,26 @@
             <a href="#" class="titleInicio">Volver al Iniciar Sesión</a>
             <div class="login__datos_confirm">
                 <p class="titleLogin">Bienvenido a Raviga</p>
-                <form action="/registroProcess" method="POST" class="form-login-main" modelAttribute="nuevoUsuario">
+                <form:form action="/registroProcess" method="POST" class="form-login-main" modelAttribute="nuevoUsuario">
                     <div class="names">
-                        <input type="text" name="firstname" placeholder="Nombres">
-                        <input type="text" name="lastname" placeholder="Apellidos">
+                        <form:input path="firstname" placeholder="Nombres"/>
+                        <form:errors path="firstname" class="text-danger"/>
+                        
+                        <form:input path="lastname" placeholder="Apellidos" />
+                        <form:errors path="lastname" class="text-danger"/>
+                        
                     </div>
-                    <input type="email" name="email" placeholder="Tu correo electrónico">
-                    <input type="password" name="password" placeholder="Contraseña">
-                    <input type="password" name="confirm" placeholder="Confirmar contraseña">
+                    <form:input type="email" path="email" placeholder="Tu correo electrónico"/>
+                   	<form:errors path="email" class="text-danger"/>
+                    
+                    <form:password path="password" placeholder="Contraseña"/>
+                    <form:errors path="password" class="text-danger"/>
+                    
+                    <form:password path="confirm" placeholder="Confirmar contraseña"/>
+                    <form:errors path="confirm" class="text-danger"/>
+                    
                     <div class="location">
-                        <select name="selectDepartamento" class="departamentoClass">
+                        <form:select path="departamento" class="departamentoClass">
                             <option value="">Departamento</option>
                             <option value="Amazonas">Amazonas</option>
                             <option value="Ancash">Ancash</option>
@@ -69,15 +79,18 @@
                             <option value="Tumbes">Tumbes</option>
                             <option value="Ucayali">Ucayali</option>
                             <!--Fuente: https://codificalo.com/select-dependiente-departamentos-provincias-y-distritos-de-peru-con-puro-javascript/ -->
-                        </select>
-                        <select name="universidad" class="universidadClass">
+                        </form:select>
+                        <form:errors path="departamento" class="text-danger" />
+                        <form:select path="universidad" class="universidadClass">
                         	<c:forEach var="i" items="${universidades}">
                         		<option value="${i}">${i}</option>
                         	</c:forEach>
-                        </select>
+                        </form:select>
+                        <form:errors path="universidad" class="text-danger" />
+                        
                     </div>
                     <input type="submit" value="Ingresar">
-                </form>
+                </form:form>
             </div>
         </div>
         <div class="login_banner cropped">
