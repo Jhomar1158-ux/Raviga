@@ -38,8 +38,10 @@ public class UserController {
 			List<Convocatoria> allConvocatorias = servicio.find_all_convocatorias();
 			
 			model.addAttribute("allConvocatorias", allConvocatorias);
-			
-			
+//			
+//			Modificar las horas del deadline
+//			https://stackoverflow.com/questions/4772425/change-date-format-in-a-java-string
+				
 			return "index.jsp";
 		}
 		

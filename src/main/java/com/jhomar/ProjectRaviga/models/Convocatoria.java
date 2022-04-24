@@ -42,7 +42,7 @@ public class Convocatoria {
 	private String linkInscripcion;
 	
 	@Future //Solo acepta fechas a futuro
-	@DateTimeFormat(pattern ="yyyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date deadline;
 	
 	@NotEmpty(message="El campo de universidad es obligatorio.")
